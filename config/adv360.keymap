@@ -100,7 +100,12 @@
         compatible = "zmk,keymap";
         default_layer {
             bindings = <
-                AS(Q) AS(W) AS(E) AS(R) AS(T) AS(Y) // Autoshift applied for QWERTY keys
+                AS(Q) AS(W) AS(E) AS(R) AS(T) AS(Y) AS(U) AS(I) AS(O) AS(P)
+                AS(A) AS(S) AS(D) AS(F) AS(G) AS(H) AS(J) AS(K) AS(L) AS(SEMICOLON)
+                AS(Z) AS(X) AS(C) AS(V) AS(B) AS(N) AS(M) AS(COMMA) AS(DOT) AS(SLASH)
+                AS(1) AS(2) AS(3) AS(4) AS(5) AS(6) AS(7) AS(8) AS(9) AS(0)
+                AS(MINUS) AS(EQUAL) AS(GRAVE) AS(TAB) AS(SPACE) AS(ENTER)
+                AS(ESC) AS(BACKSPACE) AS(DELETE) AS(UP) AS(DOWN) AS(LEFT) AS(RIGHT)
             >;
         };
     };
