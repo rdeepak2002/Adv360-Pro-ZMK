@@ -1,15 +1,7 @@
-
 /*
  * Copyright (c) 2020 The ZMK Contributors
  *
  * SPDX-License-Identifier: MIT
- */
-
-
-/* THIS FILE WAS GENERATED!
- *
- * This file was generated automatically. You may or may not want to
- * edit it directly.
  */
 
 #include <behaviors.dtsi>
@@ -32,19 +24,28 @@
         flavor = "tap-preferred";
         bindings = <&kp>, <&kp>;
     };
+
+    as: auto_shift {
+        compatible = "zmk,behavior-hold-tap";
+        label = "AUTO_SHIFT";
+        #binding-cells = <2>;
+        tapping-term-ms = <200>;
+        quick_tap_ms = <0>;
+        flavor = "tap-preferred";
+        bindings = <&kp>, <&kp>;
+    };
   };
 
     keymap {
         compatible = "zmk,keymap";
 
-
         default_layer {
             bindings = <
- &kp EQUAL     &kp N1    &kp N2    &kp N3     &kp N4  &kp N5              &tog 1                                                                &mo 3  &kp N6  &kp N7     &kp N8    &kp N9    &kp N0  &kp MINUS
-   &kp TAB      &kp Q     &kp W     &kp E      &kp R   &kp T               &none                                                                &none   &kp Y   &kp U      &kp I     &kp O     &kp P   &kp BSLH
-   &kp ESC      &kp A     &kp S     &kp D      &kp F   &kp G               &none  &kp RGUI  &kp LALT                  &kp RCTRL   &kp LGUI      &none   &kp H   &kp J      &kp K     &kp L  &kp SEMI    &kp SQT
- &kp LSHFT      &kp Z     &kp X     &kp C      &kp V   &kp B                                &kp HOME                  &kp PG_UP                         &kp N   &kp M  &kp COMMA   &kp DOT  &kp FSLH  &kp RSHFT
-     &mo 2  &kp GRAVE  &kp CAPS  &kp LEFT  &kp RIGHT                    &kp BSPC   &kp DEL   &kp END                  &kp PG_DN  &kp ENTER  &kp SPACE          &kp UP   &kp DOWN  &kp LBKT  &kp RBKT      &mo 2
+ &as LS(EQUAL) EQUAL  &as LS(N1) N1  &as LS(N2) N2  &as LS(N3) N3  &as LS(N4) N4  &as LS(N5) N5              &tog 1                                                                &mo 3  &as LS(N6) N6  &as LS(N7) N7  &as LS(N8) N8  &as LS(N9) N9  &as LS(N0) N0  &as LS(MINUS) MINUS
+   &kp TAB            &as LS(Q) Q     &as LS(W) W    &as LS(E) E    &as LS(R) R    &as LS(T) T               &none                                                                &none   &as LS(Y) Y     &as LS(U) U    &as LS(I) I    &as LS(O) O    &as LS(P) P    &as LS(BSLH) BSLH
+   &kp ESC            &as LS(A) A     &as LS(S) S    &as LS(D) D    &as LS(F) F    &as LS(G) G               &none  &kp RGUI  &kp LALT                  &kp RCTRL   &kp LGUI      &none   &as LS(H) H     &as LS(J) J    &as LS(K) K    &as LS(L) L    &as LS(SEMI) SEMI  &as LS(SQT) SQT
+ &kp LSHFT           &as LS(Z) Z     &as LS(X) X    &as LS(C) C    &as LS(V) V    &as LS(B) B                                &kp HOME                  &kp PG_UP                         &as LS(N) N     &as LS(M) M    &as LS(COMMA) COMMA  &as LS(DOT) DOT  &as LS(FSLH) FSLH  &kp RSHFT
+     &mo 2  &as LS(GRAVE) GRAVE  &kp CAPS  &kp LEFT  &kp RIGHT                    &kp BSPC   &kp DEL   &kp END                  &kp PG_DN  &kp ENTER  &kp SPACE          &kp UP   &kp DOWN  &as LS(LBKT) LBKT  &as LS(RBKT) RBKT      &mo 2
             >;
         };
 
@@ -77,6 +78,5 @@
   &none         &none         &none         &none         &none                                &none   &none   &none                       &none  &bl BL_TOG         &rgb_ug RGB_TOG          &bl BL_INC  &bl BL_DEC   &none   &none   &none
             >;
         };
-
     };
 };
